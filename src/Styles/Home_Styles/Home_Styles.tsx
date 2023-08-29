@@ -1,5 +1,5 @@
 import styled, { keyframes, css } from "styled-components";
-import fundo from "../Home_Styles/background_strom.png";
+import fundo from "../Home_Styles/ceu.png";
 
 const fadeIn = keyframes`
   from {
@@ -64,14 +64,16 @@ export const Text = styled.p`
   width: 100vh;
   font-size: 20px;
   color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
 export const Title = styled.h1`
   width: 100vh;
   position: absolute;
   text-align: center;
-  font-size: 50px;
-  margin-bottom: 10px;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 60px;
   background-color: transparent;
   color: #fff;
   animation: fliptTile 2s;
@@ -91,37 +93,31 @@ export const Title_lv2 = styled.h2`
   font-size: 30px;
   margin-top: 25px;
   color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
 export const Registration_Button = styled.button`
+  background-color: #000000be;
   position: absolute;
   width: 300px;
   height: 50px;
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-top: 200px;
   margin-bottom: 25px;
   z-index: 1;
-  color: #fff;
+  color: #ffffff;
+  border: none;
+  transition: width 3s, font-size 3s; /* Adicione a transição para suavizar as mudanças de largura e tamanho da fonte */
 
   &:hover {
     cursor: pointer;
-    background-color: #1275b1;
-    color: #000000;
-    transition: 2s;
     font-weight: bold;
-    font-size: 20;
+    font-size: 16px;
+    width: 470px;
   }
-`;
-
-export const Card = styled.div`
-  width: 500px;
-  height: 400px;
-  border-radius: 5px;
-  margin-bottom: 60px;
-  border: 3px solid #000;
-  background-color: red;
 `;
 
 export const Services_Container = styled.div`

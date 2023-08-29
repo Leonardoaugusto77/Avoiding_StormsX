@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Wrapper,
   Header_Wrapper,
@@ -9,20 +9,11 @@ import {
   Text,
   Registration_Button,
   Services_Container,
-  Card,
   Character_Img,
 } from "./Styles/Home_Styles/Home_Styles.tsx";
 import Character from "../public/Imgs/frame.png";
-import Search_Cep from "./Components/Search_Cep/Search_Cep.tsx";
-import { RequestCEP } from "./Services/CEP_API.tsx"; // Importe RequestCEP corretamente
-
-interface CharacterImgProps {
-  isVisible: boolean;
-  animationDuration: string;
-  onAnimationEnd: () => void;
-  cursorPointer?: boolean; // Tornar opcional
-  style: React.CSSProperties;
-}
+import SearchCep from "./Components/Search_Cep/Search_Cep.tsx";
+import { fetchCEP } from "./Services/CEP_API.tsx";
 
 export default function App() {
   const [isVisible, setIsVisible] = useState(true);
@@ -34,11 +25,10 @@ export default function App() {
     showTimer = setTimeout(() => {
       setIsVisible(true);
 
-      // Apenas inicie o temporizador para ocultar após a animação de entrada
       hideTimer = setTimeout(() => {
         setIsVisible(false);
-      }, 6000); // Tempo para ocultar após a animação de entrada (mesma duração da animação)
-    }, 5000); // Tempo para mostrar o personagem
+      }, 6000);
+    }, 5000);
 
     return () => {
       if (showTimer) clearTimeout(showTimer);
@@ -56,9 +46,7 @@ export default function App() {
     <Wrapper>
       <Header_Wrapper>
         <Header_Infos>
-          <Title>
-            Register your email to receive <br /> storm forecasts
-          </Title>
+          <Title>Register your email to receive storm forecasts</Title>
           <Registration_Button>
             Receive the news by your email
           </Registration_Button>
@@ -77,8 +65,7 @@ export default function App() {
 
       <br></br>
       <Services_Container>
-        <Search_Cep RequestAPI={RequestCEP} />
-        <Card />
+        <SearchCep RequestCEP={fetchCEP} />
       </Services_Container>
 
       <Character_Img
@@ -86,7 +73,7 @@ export default function App() {
         isVisible={isVisible}
         animationDuration="6s"
         onAnimationEnd={handleAnimationEnd}
-        cursorPointer={true} // Pode ser true ou false, ou omitido se for opcional
+        cursorPointer={true}
       />
     </Wrapper>
   );
