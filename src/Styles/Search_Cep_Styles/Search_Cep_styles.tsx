@@ -12,11 +12,7 @@ export const Card = styled.div`
   background-color: #000000be;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transition: height 0.5s ease;
-  margin: auto;
-
-  &.expanded {
-    height: 200px;
-  }
+  margin: 25px auto;
 `;
 
 export const Title_Cep = styled.h3`
@@ -27,8 +23,10 @@ export const Title_Cep = styled.h3`
 `;
 
 export const Search_input = styled.input`
-  width: 350px;
-  height: 30px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
 
   &::placeholder {
     font-size: 15px;
@@ -36,9 +34,19 @@ export const Search_input = styled.input`
   }
 `;
 
+export const Button = styled.button`
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+`;
+
 export const SearchCep_Container = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 export const Content = styled.div<{ isExpanded: boolean }>`
@@ -47,16 +55,6 @@ export const Content = styled.div<{ isExpanded: boolean }>`
   border: 1px solid #ccc;
   border-radius: 5px;
   display: ${(props) => (props.isExpanded ? "block" : "none")};
-`;
-
-export const IconContainer = styled.div`
-  position: relative;
-  bottom: 80px;
-  left: 220px;
-  cursor: pointer;
-  color: #007bff;
-  font-size: 24px;
-  margin-bottom: -35px;
 `;
 
 export const ModalContainer = styled.div`

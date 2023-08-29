@@ -13,7 +13,10 @@ import {
 } from "./Styles/Home_Styles/Home_Styles.tsx";
 import Character from "../public/Imgs/frame.png";
 import SearchCep from "./Components/Search_Cep/Search_Cep.tsx";
+import Climate from "./Components/Climate/Climate.tsx";
+import Form from "./Components/Form/Form.tsx";
 import { fetchCEP } from "./Services/CEP_API.tsx";
+import { fetchWeatherData } from "./Services/Open.tsx";
 
 export default function App() {
   const [isVisible, setIsVisible] = useState(true);
@@ -66,6 +69,7 @@ export default function App() {
       <br></br>
       <Services_Container>
         <SearchCep RequestCEP={fetchCEP} />
+        <Climate RequestClimate={fetchWeatherData} />
       </Services_Container>
 
       <Character_Img
@@ -75,6 +79,7 @@ export default function App() {
         onAnimationEnd={handleAnimationEnd}
         cursorPointer={true}
       />
+      <Form />
     </Wrapper>
   );
 }

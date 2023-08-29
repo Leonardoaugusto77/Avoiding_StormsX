@@ -2,14 +2,14 @@ import { useState } from "react";
 import {
   Card,
   Title_Cep,
+  SearchCep_Container,
   Search_input,
-  IconContainer,
+  Button,
   ModalContainer,
   ModalContent,
   CloseButton,
-  SearchCep_Container,
 } from "../../Styles/Search_Cep_Styles/Search_Cep_styles";
-import { BsArrowsFullscreen } from "react-icons/bs";
+
 import ResponseCEP, { ResponseCEPProps } from "./ResponseCEP";
 
 interface SearchCepProps {
@@ -26,13 +26,14 @@ export default function SearchCep({ RequestCEP }: SearchCepProps) {
   };
 
   const handleSearch = async () => {
+    if (cep === "") {
+      return window.alert("Valor digitado incorretamente!");
+    }
+
     try {
       const data = await RequestCEP(cep);
 
-      // Se a solicitação for bem-sucedida, armazene os dados do CEP no estado
       setCepData(data);
-
-      // Abra o modal para exibir os dados
       toggleModal();
     } catch (error) {
       console.error("Erro ao buscar informações de CEP:", error);
@@ -42,9 +43,6 @@ export default function SearchCep({ RequestCEP }: SearchCepProps) {
   return (
     <div>
       <Card>
-        <IconContainer className="expand-icon">
-          <BsArrowsFullscreen onClick={toggleModal} />
-        </IconContainer>
         <Title_Cep>Get location information:</Title_Cep>
         <SearchCep_Container>
           <Search_input
@@ -53,7 +51,7 @@ export default function SearchCep({ RequestCEP }: SearchCepProps) {
             value={cep}
             onChange={(e) => setCep(e.target.value)}
           />
-          <button onClick={handleSearch}>Search</button>
+          <Button onClick={handleSearch}>Search</Button>
         </SearchCep_Container>
       </Card>
       {showModal && (

@@ -7,7 +7,6 @@ export interface ResponseCEPProps {
   bairro: string;
   localidade: string;
   uf: string;
-  // Outros campos, se houver
 }
 
 export default function ResponseCEP({
