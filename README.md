@@ -54,7 +54,7 @@ To start working on this project, follow the steps below:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/repository-name.git
+   git clone https://github.com/Leonardoaugusto77/Avoiding_StormsX
    ```
 
 2. Install dependencies:
