@@ -64,18 +64,18 @@ export const Text = styled.p`
   font-size: 20px;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
-  @media (max-width: 390px) {
-    width: 40vh;
-    font-size: 15px;
+  @media (max-width: 768px) {
+    width: 50vh;
   }
 
   @media (max-width: 414px) {
     width: 35vh;
     font-size: 15px;
   }
-  @media (max-width: 768px) {
-    width: 50vh;
+
+  @media (max-width: 390px) {
+    width: 40vh;
+    font-size: 15px;
   }
 `;
 
@@ -144,12 +144,12 @@ export const Registration_Button = styled.button`
     font-size: 16px;
     width: 470px;
   }
-  @media (max-width: 768px) {
-    width: 400px;
-  }
 
   @media (max-width: 390px) {
     width: 230px;
+  }
+  @media (max-width: 768px) {
+    width: 350px;
   }
 `;
 
