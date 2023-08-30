@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Avoiding_Storms project! This project was developed with the idea of helping users check the weather conditions of various locations by searching for the city name, allowing them to avoid localized storms. Additionally, users can search for cities based on their postal codes. Whether you're on your smartphone or computer, you can easily access this project using the provided [Project](https://viacep.com.br/)
+Welcome to the Avoiding_Storms project! This project was developed with the idea of helping users check the weather conditions of various locations by searching for the city name, allowing them to avoid localized storms. Additionally, users can search for cities based on their postal codes. Whether you're on your smartphone or computer, you can easily access this project using the provided [Project](https://avoiding-stroms-leonardoaugusto77.vercel.app/)
 
 ![Project Preview](./public/Imgs/screenshot_39.png)
 ![Project Preview](./public/Imgs/Screenshot_1.png)
@@ -21,7 +21,11 @@ Before diving into the development, I created a navigable [Prototype](<https://w
 
 - **Styled Components**: Library for styling React components.
 
+- **Design System**: I created a global style and a theme.ts file to store certain colors and patterns, showcasing my ability to work with this type of organization.
+
 - **TypeScript Documentation**: I referred to the official TypeScript documentation to resolve queries and enhance my understanding of the language.
+
+-- **React Router Dom**: I used the react router dom to create a back and forth navigation for the contact form
 
 - **ChatGPT**: I utilized ChatGPT to research and clarify doubts related to TypeScript.
 
@@ -42,3 +46,29 @@ In five years, I envision myself as a senior software engineer, having establish
 If you're interested in following my progress and staying connected, feel free to follow me on my [Instagram](https://www.instagram.com/heisen77h/). Your support and engagement are greatly appreciated!
 
 Thank you for exploring the Avoiding_Storms project. Your interest and feedback are invaluable as I continue to refine and enhance this initiative.
+
+## Getting Started
+
+To start working on this project, follow the steps below:
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/your-username/repository-name.git
+   ```
+
+2. Install dependencies:
+
+   ```
+   npm install
+   ```
+
+3. Start the project:
+
+   ```
+   npm run dev
+   ```
+
+The application will run locally and be available at http://localhost:3000. Make sure that port 3000 is not occupied by another process.
+
+Enjoy the project and feel free to explore and contribute!
