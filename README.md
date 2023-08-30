@@ -19,7 +19,7 @@ Through your automatic location, the weather search input is automatically updat
 
 ## Improvements
 
-- Here are some improvements that could be added to the project with more time:
+Here are some improvements that could be added to the project with more time:
 
 - Implement a more polished loading skeleton to enhance the waiting experience.
 
