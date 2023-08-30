@@ -32,11 +32,22 @@ export const Card = styled.div`
   background-color: #000000be;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin: 30px auto;
+
+  @media (max-width: 414px) {
+    width: 385px;
+  }
+  @media (max-width: 390px) {
+    width: 350px;
+  }
 `;
 
 export const Title = styled.h1`
   font-size: 24px;
   margin-top: 20px;
+
+  @media (max-width: 390px) {
+    font-size: 20px;
+  }
 `;
 
 export const SearchContainer = styled.div`
@@ -80,6 +91,10 @@ export const WeatherInfoContainer = styled.div<WeatherInfoContainerProps>`
     max-height: 500px; /* ou a altura desejada */
     opacity: 1;
   `}
+
+  @media (max-width:390px) {
+    font-size: 15px;
+  }
 `;
 
 export const WeatherConditions = styled.div`

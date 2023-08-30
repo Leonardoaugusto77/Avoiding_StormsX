@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
+interface CardProps {
+  mobileWidth: string;
+}
+
+export const Card = styled.div<CardProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +17,14 @@ export const Card = styled.div`
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transition: height 0.5s ease;
   margin: 25px auto;
+
+  @media (max-width: 414px) {
+    width: 385px;
+  }
+
+  @media (max-width: 390px) {
+    width: ${(props) => props.mobileWidth};
+  }
 `;
 
 export const Title_Cep = styled.h3`
@@ -20,6 +32,18 @@ export const Title_Cep = styled.h3`
   text-align: center;
   font-size: 30px;
   margin-bottom: 15px;
+
+  @media (max-width: 390px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 414px) {
+    font-size: 25px;
+  }
+`;
+
+export const Text = styled.p`
+  margin-bottom: -5px;
 `;
 
 export const Search_input = styled.input`
@@ -71,7 +95,6 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  /* Estilos para o conteúdo do modal */
   background: linear-gradient(146deg, #06deea 0%, #fe9abe 100%);
   width: 80%;
   max-width: 600px;
@@ -79,14 +102,20 @@ export const ModalContent = styled.div`
   border-radius: 5px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   position: relative;
+
+  @media (max-width: 390px) and (min-width: 414px) {
+    width: 300px;
+  }
 `;
 
 export const CloseButton = styled.button`
   position: absolute;
-  bottom: 300px;
-  right: 10px;
+  bottom: 350px;
+  right: 15px;
   background-color: transparent;
   border: none;
+  font-size: 25px;
+  color: #ffffff;
 
   font-size: 25px;
   color: #ffffff;

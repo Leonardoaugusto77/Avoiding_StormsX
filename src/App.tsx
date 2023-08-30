@@ -11,16 +11,15 @@ import {
   Services_Container,
   Character_Img,
 } from "./Styles/Home_Styles/Home_Styles.tsx";
+import { fetchCEP } from "./Services/CEP_API.tsx";
+import { fetchWeatherData } from "./Services/Open.tsx";
+import { Link } from "react-router-dom";
 import Character from "../public/Imgs/frame.png";
 import SearchCep from "./Components/Search_Cep/Search_Cep.tsx";
 import Climate from "./Components/Climate/Climate.tsx";
-import Form from "./Components/Form/Form.tsx";
-import { fetchCEP } from "./Services/CEP_API.tsx";
-import { fetchWeatherData } from "./Services/Open.tsx";
 
-export default function App() {
+export default function App(): JSX.Element {
   const [isVisible, setIsVisible] = useState(true);
-  const [animationComplete, setAnimationComplete] = useState(false);
   let showTimer: NodeJS.Timeout | undefined = undefined;
   let hideTimer: NodeJS.Timeout | undefined = undefined;
 
@@ -39,19 +38,25 @@ export default function App() {
     };
   }, []);
 
-  const handleAnimationEnd = () => {
-    if (!isVisible) {
-      setAnimationComplete(true);
-    }
-  };
-
   return (
     <Wrapper>
       <Header_Wrapper>
         <Header_Infos>
           <Title>Register your email to receive storm forecasts</Title>
+
           <Registration_Button>
-            Receive the news by your email
+            <Link
+              to="/form"
+              style={{
+                textDecoration: "none",
+                fontSize: "14px",
+                fontWeight: "600",
+                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+                color: "#fff",
+              }}
+            >
+              Receive the news by your email
+            </Link>
           </Registration_Button>
         </Header_Infos>
       </Header_Wrapper>
@@ -72,14 +77,14 @@ export default function App() {
         <Climate RequestClimate={fetchWeatherData} />
       </Services_Container>
 
-      <Character_Img
-        src={Character}
-        isVisible={isVisible}
-        animationDuration="6s"
-        onAnimationEnd={handleAnimationEnd}
-        cursorPointer={true}
-      />
-      <Form />
+      <Link to="/form">
+        <Character_Img
+          src={Character}
+          isVisible={isVisible}
+          animationDuration="6s"
+          cursorPointer={true}
+        />
+      </Link>
     </Wrapper>
   );
 }

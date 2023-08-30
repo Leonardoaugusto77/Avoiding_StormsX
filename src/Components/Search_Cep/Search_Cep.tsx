@@ -32,7 +32,6 @@ export default function SearchCep({ RequestCEP }: SearchCepProps) {
 
     try {
       const data = await RequestCEP(cep);
-
       setCepData(data);
       toggleModal();
     } catch (error) {
@@ -42,7 +41,7 @@ export default function SearchCep({ RequestCEP }: SearchCepProps) {
 
   return (
     <div>
-      <Card>
+      <Card mobileWidth="350px">
         <Title_Cep>Get location information:</Title_Cep>
         <SearchCep_Container>
           <Search_input

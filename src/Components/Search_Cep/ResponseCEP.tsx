@@ -1,5 +1,9 @@
 // ResponseCEP.tsx
-import { Card } from "../../Styles/Search_Cep_Styles/Search_Cep_styles";
+import {
+  Card,
+  Title_Cep,
+  Text,
+} from "../../Styles/Search_Cep_Styles/Search_Cep_styles";
 
 export interface ResponseCEPProps {
   cep: string;
@@ -16,19 +20,19 @@ export default function ResponseCEP({
 }): JSX.Element {
   return (
     <>
-      <Card>
-        <h2>Location Information:</h2>
+      <Card mobileWidth="285px">
+        <Title_Cep>Location Information:</Title_Cep>
         <br></br>
-        <p>CEP: {locationData.cep}</p>
+        <Text>CEP: {locationData.cep}</Text>
         <br></br>
-        <p>Street: {locationData.logradouro}</p>
+        <Text>Street: {locationData.logradouro}</Text>
 
         <br></br>
-        <p>Neighborhood: {locationData.bairro}</p>
+        <Text>Neighborhood: {locationData.bairro}</Text>
         <br></br>
-        <p>City: {locationData.localidade}</p>
+        <Text>City: {locationData.localidade}</Text>
         <br></br>
-        <p>State: {locationData.uf}</p>
+        <Text>State: {locationData.uf}</Text>
       </Card>
     </>
   );

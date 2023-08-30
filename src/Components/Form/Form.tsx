@@ -1,4 +1,16 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Wrapper_Form,
+  Title_Form,
+  FormContainer,
+  FormSection,
+  Label,
+  Input,
+  TextArea,
+  SubmitButton,
+  Button_Container,
+} from "../../Styles/Form_Styles/Form_Styles";
 
 export default function Form(): JSX.Element {
   const [formData, setFormData] = useState({
@@ -26,22 +38,32 @@ export default function Form(): JSX.Element {
         file,
       }));
     } else {
-      alert("Por favor, selecione um arquivo PDF.");
+      alert("Please select a PDF file.");
     }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Dados do Formulário:", formData);
+    console.log("Form Data:", formData);
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+      file: null,
+    });
+
+    alert("Data has been sent!");
   };
 
   return (
-    <div>
-      <h1>Página de Contato</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Nome:</label>
-          <input
+    <Wrapper_Form>
+      <Title_Form>Contact Page</Title_Form>
+      <Link to="/">Back to Home</Link>
+      <FormContainer onSubmit={handleSubmit}>
+        <FormSection>
+          <Label htmlFor="name">Name:</Label>
+          <Input
             type="text"
             id="name"
             name="name"
@@ -49,10 +71,10 @@ export default function Form(): JSX.Element {
             onChange={handleChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
+        </FormSection>
+        <FormSection>
+          <Label htmlFor="email">Email:</Label>
+          <Input
             type="email"
             id="email"
             name="email"
@@ -60,10 +82,10 @@ export default function Form(): JSX.Element {
             onChange={handleChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="message">Mensagem:</label>
-          <textarea
+        </FormSection>
+        <FormSection>
+          <Label htmlFor="message">Message:</Label>
+          <TextArea
             id="message"
             name="message"
             value={formData.message}
@@ -71,19 +93,21 @@ export default function Form(): JSX.Element {
             rows={4}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="file">Envie um arquivo PDF:</label>
-          <input
+        </FormSection>
+        <FormSection>
+          <Label htmlFor="file">Upload a PDF file:</Label>
+          <Input
             type="file"
             id="file"
             name="file"
             accept=".pdf"
             onChange={handleFileChange}
           />
-        </div>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+        </FormSection>
+        <Button_Container>
+          <SubmitButton type="submit">Submit</SubmitButton>
+        </Button_Container>
+      </FormContainer>
+    </Wrapper_Form>
   );
 }

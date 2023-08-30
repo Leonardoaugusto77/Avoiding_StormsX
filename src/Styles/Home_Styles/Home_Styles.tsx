@@ -1,6 +1,12 @@
 import styled, { keyframes, css } from "styled-components";
 import fundo from "../Home_Styles/ceu.png";
 
+interface CharacterImgProps {
+  isVisible: boolean;
+  cursorPointer: boolean;
+  animationDuration: string;
+}
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -18,13 +24,6 @@ const fadeOut = keyframes`
     opacity: 0;
   }
 `;
-
-interface CharacterImgProps {
-  isVisible: boolean;
-  cursorPointer: boolean;
-  animationDuration: string;
-  onAnimationEnd: (event: React.AnimationEvent<HTMLImageElement>) => void;
-}
 
 export const Wrapper = styled.div`
   position: relative;
@@ -65,6 +64,19 @@ export const Text = styled.p`
   font-size: 20px;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 390px) {
+    width: 40vh;
+    font-size: 15px;
+  }
+
+  @media (max-width: 414px) {
+    width: 35vh;
+    font-size: 15px;
+  }
+  @media (max-width: 768px) {
+    width: 50vh;
+  }
 `;
 
 export const Title = styled.h1`
@@ -86,6 +98,18 @@ export const Title = styled.h1`
       transform: rotateX(0deg);
     }
   }
+
+  @media (max-width: 390px) {
+    width: 40vh;
+    font-size: 30px;
+  }
+  @media (max-width: 768px) {
+    width: 60vh;
+  }
+  @media (max-width: 414px) {
+    width: 40vh;
+    font-size: 25px;
+  }
 `;
 
 export const Title_lv2 = styled.h2`
@@ -94,6 +118,10 @@ export const Title_lv2 = styled.h2`
   margin-top: 25px;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 414px) {
+    font-size: 25px;
+  }
 `;
 
 export const Registration_Button = styled.button`
@@ -102,9 +130,7 @@ export const Registration_Button = styled.button`
   width: 300px;
   height: 50px;
   border-radius: 5px;
-  font-size: 14px;
-  font-weight: 600;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
   margin-top: 200px;
   margin-bottom: 25px;
   z-index: 1;
@@ -117,6 +143,13 @@ export const Registration_Button = styled.button`
     font-weight: bold;
     font-size: 16px;
     width: 470px;
+  }
+  @media (max-width: 768px) {
+    width: 400px;
+  }
+
+  @media (max-width: 390px) {
+    width: 230px;
   }
 `;
 
@@ -147,11 +180,6 @@ export const Character_Img = styled.img<CharacterImgProps>`
   display: ${(props) => (props.isVisible ? "block" : "none")};
   pointer-events: ${(props) => (props.isVisible ? "auto" : "none")};
 
-  &:hover {
-    cursor: ${(props) => (props.cursorPointer ? "pointer" : "default")};
-  }
-
-  /* Defina uma única animação que é condicional com delay */
   animation: ${(props) =>
     props.isVisible
       ? css`
@@ -159,4 +187,11 @@ export const Character_Img = styled.img<CharacterImgProps>`
           ${fadeOut} 6s 6s ease-in-out forwards
         `
       : "none"};
+
+  @media (max-width: 390px) {
+    display: none;
+  }
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
