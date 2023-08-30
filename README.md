@@ -11,7 +11,7 @@ Please note that for optimal performance on mobile devices, character animation 
 
 ## About the Project
 
-Before diving into the development, I created a navigable prototype to visualize the final product. With over two years of experience in UX and UI Design, I've worked with various companies in Curitiba and beyond, utilizing these skills to enhance the project's user experience.
+Before diving into the development, I created a navigable [Prototype](<https://www.figma.com/file/IFOZsy4QXZcaG2uPRdxnYe/Front_end(Teste)?type=design&node-id=0%3A1&mode=design&t=qixEvn5kGALeUBbh-1>) to visualize the final product. With over two years of experience in UX and UI Design, I've worked with various companies in Curitiba and beyond, utilizing these skills to enhance the project's user experience.
 
 ## Resources used
 
@@ -21,7 +21,7 @@ Before diving into the development, I created a navigable prototype to visualize
 
 - **Styled Components**: Library for styling React components.
 
-- **Documentação do TypeScript**: I referred to the official TypeScript documentation to resolve queries and enhance my understanding of the language.
+- **TypeScript Documentation**: I referred to the official TypeScript documentation to resolve queries and enhance my understanding of the language.
 
 - **ChatGPT**: I utilized ChatGPT to research and clarify doubts related to TypeScript.
 
