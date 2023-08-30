@@ -33,11 +33,19 @@ export const Card = styled.div`
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin: 30px auto;
 
+  @media (max-width: 425px) {
+    width: 380px;
+  }
+
   @media (max-width: 414px) {
     width: 385px;
   }
+
   @media (max-width: 390px) {
     width: 350px;
+  }
+  @media (max-width: 320px) {
+    width: 300px;
   }
 `;
 
@@ -45,8 +53,16 @@ export const Title = styled.h1`
   font-size: 24px;
   margin-top: 20px;
 
+  @media (max-width: 425px) {
+    font-size: 20px;
+  }
+
   @media (max-width: 390px) {
     font-size: 20px;
+  }
+
+  @media (max-width: 320px) {
+    text-align: center;
   }
 `;
 
@@ -55,6 +71,10 @@ export const SearchContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+
+  @media (max-width: 320px) {
+    flex-direction: column;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -71,6 +91,10 @@ export const SearchButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+
+  @media (max-width: 320px) {
+    margin-top: 15px;
+  }
 `;
 
 export const WeatherInfoContainer = styled.div<WeatherInfoContainerProps>`

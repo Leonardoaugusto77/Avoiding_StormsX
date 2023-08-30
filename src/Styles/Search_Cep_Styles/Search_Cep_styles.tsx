@@ -18,12 +18,51 @@ export const Card = styled.div<CardProps>`
   transition: height 0.5s ease;
   margin: 25px auto;
 
+  @media (max-width: 425px) {
+    width: 380px;
+  }
+
   @media (max-width: 414px) {
     width: 385px;
   }
 
   @media (max-width: 390px) {
     width: ${(props) => props.mobileWidth};
+  }
+
+  @media (max-width: 320px) {
+    width: 300px;
+  }
+`;
+
+export const Card_Response = styled.div<CardProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  height: 300px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #000000be;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: height 0.5s ease;
+  margin: 25px auto;
+
+  @media (max-width: 425px) {
+    width: 380px;
+  }
+
+  @media (max-width: 414px) {
+    width: 330px;
+  }
+
+  @media (max-width: 390px) {
+    width: ${(props) => props.mobileWidth};
+  }
+
+  @media (max-width: 320px) {
+    width: 250px;
   }
 `;
 
@@ -33,12 +72,15 @@ export const Title_Cep = styled.h3`
   font-size: 30px;
   margin-bottom: 15px;
 
-  @media (max-width: 390px) {
+  @media (max-width: 414px) {
     font-size: 25px;
   }
 
-  @media (max-width: 414px) {
-    font-size: 25px;
+  @media (max-width: 390px) {
+    font-size: 24px;
+  }
+  @media (max-width: 320px) {
+    font-size: 20px;
   }
 `;
 
@@ -65,12 +107,20 @@ export const Button = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+
+  @media (max-width: 320px) {
+    margin-top: 15px;
+  }
 `;
 
 export const SearchCep_Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 320px) {
+    flex-direction: column;
+  }
 `;
 
 export const Content = styled.div<{ isExpanded: boolean }>`
@@ -82,7 +132,6 @@ export const Content = styled.div<{ isExpanded: boolean }>`
 `;
 
 export const ModalContainer = styled.div`
-  /* Estilos para o contêiner do modal */
   position: fixed;
   top: 0;
   left: 0;
@@ -124,5 +173,11 @@ export const CloseButton = styled.button`
     cursor: pointer;
     color: red;
     transition: 2s;
+  }
+  @media (max-width: 375px) {
+    bottom: 200px;
+  }
+  @media (max-width: 320px) {
+    bottom: 350px;
   }
 `;

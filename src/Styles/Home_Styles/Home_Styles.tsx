@@ -58,27 +58,6 @@ export const Header_Infos = styled.div`
 
 export const Wrapper_Section_Purpose = styled.div``;
 
-export const Text = styled.p`
-  text-align: center;
-  width: 100vh;
-  font-size: 20px;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  @media (max-width: 768px) {
-    width: 50vh;
-  }
-
-  @media (max-width: 414px) {
-    width: 35vh;
-    font-size: 15px;
-  }
-
-  @media (max-width: 390px) {
-    width: 40vh;
-    font-size: 15px;
-  }
-`;
-
 export const Title = styled.h1`
   width: 100vh;
   position: absolute;
@@ -99,16 +78,21 @@ export const Title = styled.h1`
     }
   }
 
+  @media (max-width: 320px) {
+    width: 30vh;
+  }
+
   @media (max-width: 390px) {
     width: 40vh;
     font-size: 30px;
   }
-  @media (max-width: 768px) {
-    width: 60vh;
-  }
+
   @media (max-width: 414px) {
     width: 40vh;
     font-size: 25px;
+  }
+  @media (max-width: 768px) {
+    width: 60vh;
   }
 `;
 
@@ -121,6 +105,27 @@ export const Title_lv2 = styled.h2`
 
   @media (max-width: 414px) {
     font-size: 25px;
+  }
+`;
+
+export const Text = styled.p`
+  text-align: center;
+  width: 100vh;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  @media (max-width: 768px) {
+    width: 50vh;
+  }
+
+  @media (max-width: 414px) {
+    width: 35vh;
+    font-size: 15px;
+  }
+
+  @media (max-width: 390px) {
+    width: 40vh;
+    font-size: 15px;
   }
 `;
 
@@ -145,25 +150,22 @@ export const Registration_Button = styled.button`
     width: 470px;
   }
 
-  @media (max-width: 390px) {
-    width: 230px;
-  }
   @media (max-width: 768px) {
     width: 350px;
+  }
+
+  @media (max-width: 320px) {
+    width: 220px;
+  }
+
+  @media (max-width: 390px) {
+    width: 230px;
   }
 `;
 
 export const Services_Container = styled.div`
   margin-bottom: 45px;
   z-index: 1;
-`;
-
-export const Wrapper_Character = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  margin: -10px;
-  z-index: 2;
 `;
 
 export const Character_Img = styled.img<CharacterImgProps>`
