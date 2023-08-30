@@ -5,6 +5,7 @@
 Welcome to the Avoiding_Storms project! This project was developed with the idea of helping users check the weather conditions of various locations by searching for the city name, allowing them to avoid localized storms. Additionally, users can search for cities based on their postal codes. Whether you're on your smartphone or computer, you can easily access this project using the provided link.
 
 ![Project Preview](./public/Imgs/screenshot_39.png)
+![Project Preview](./public/Imgs/Screenshot_1.png)
 
 Please note that for optimal performance on mobile devices, character animation effects have been disabled.
 
