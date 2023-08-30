@@ -12,7 +12,7 @@ import {
   Character_Img,
 } from "./Styles/Home_Styles/Home_Styles.tsx";
 import { fetchCEP } from "./Services/CEP_API.tsx";
-import { fetchWeatherData } from "./Services/Open.tsx";
+import { fetchWeatherData } from "./Services/OpenWeather_API.tsx";
 import { Link } from "react-router-dom";
 import Character from "../public/Imgs/frame.png";
 import SearchCep from "./Components/Search_Cep/Search_Cep.tsx";

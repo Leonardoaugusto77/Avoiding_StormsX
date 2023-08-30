@@ -1,10 +1,14 @@
 const Theme = {
   colors: {
     primary: "#fff",
-    secundary: "#1275B1",
-    terceary: "#007bff",
+    secondary: "#1275B1",
+    tertiary: "#007bff",
+    backgroundGradient: "linear-gradient(146deg, #06deea 0%, #fe9abe 100%)",
+    backgroundElements: "#000000be",
   },
   fonts: {
-    fontFamiliy: "Noto Sans Japanese",
+    fontFamily: "Noto Sans Japanese",
   },
 };
+
+export default Theme;

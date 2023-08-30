@@ -13,7 +13,7 @@ export const Card = styled.div<CardProps>`
   height: 300px;
   border-radius: 5px;
   color: #fff;
-  background-color: #000000be;
+  background-color: ${(props) => props.theme.colors.backgroundElements};
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transition: height 0.5s ease;
   margin: 25px auto;
@@ -44,7 +44,7 @@ export const Card_Response = styled.div<CardProps>`
   height: 300px;
   border-radius: 5px;
   color: #fff;
-  background-color: #000000be;
+  background-color: ${(props) => props.theme.colors.backgroundElements};
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transition: height 0.5s ease;
   margin: 25px auto;
@@ -102,7 +102,7 @@ export const Search_input = styled.input`
 
 export const Button = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: ${(props) => props.theme.colors.tertiary};
   color: #fff;
   border: none;
   border-radius: 4px;

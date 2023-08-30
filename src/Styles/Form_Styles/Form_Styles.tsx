@@ -59,7 +59,7 @@ export const TextArea = styled.textarea`
 
 export const SubmitButton = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: ${(props) => props.theme.colors.tertiary};
   color: white;
   border: none;
   border-radius: 4px;

@@ -116,6 +116,7 @@ export default function Climate({ RequestClimate }: ClimateProps): JSX.Element {
                 {weatherData?.name}, {weatherData?.sys.country}
               </h2>
               <p>Temperature: {weatherData?.main.temp}°C</p>
+              <br></br>
               <p>Humidity: {weatherData?.main.humidity}%</p>
               <WeatherConditions>
                 Conditions: {weatherData?.weather[0].description}
