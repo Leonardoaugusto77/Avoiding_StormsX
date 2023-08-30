@@ -13,6 +13,24 @@ Please note that for optimal performance on mobile devices, character animation 
 
 Before diving into the development, I created a navigable [Prototype](<https://www.figma.com/file/IFOZsy4QXZcaG2uPRdxnYe/Front_end(Teste)?type=design&node-id=0%3A1&mode=design&t=qixEvn5kGALeUBbh-1>) to visualize the final product. With over two years of experience in UX and UI Design, I've worked with various companies in Curitiba and beyond, utilizing these skills to enhance the project's user experience.
 
+Through your automatic location, the weather search input is automatically updated with your city, allowing you to see real-time weather conditions.
+
+![Project Preview](./public/Imgs/Screenshot_2.png)
+
+## Improvements
+
+- Here are some improvements that could be added to the project with more time:
+
+- Implement a more polished loading skeleton to enhance the waiting experience.
+
+- Refactor functions and styles for better optimization.
+
+- Integrate Redux or similar state management to enhance state handling.
+
+- Seek enhancements in UX design, with a focus on accessibility for individuals with auditory and visual impairments.
+
+Feel free to explore and contribute to the project! Your feedback and contributions are greatly appreciated.
+
 ## Resources used
 
 - **API CEP**: [Link da API](https://viacep.com.br/)
