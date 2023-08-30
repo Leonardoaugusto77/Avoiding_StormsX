@@ -111,6 +111,10 @@ export const Button = styled.button`
   @media (max-width: 320px) {
     margin-top: 15px;
   }
+
+  @media (max-width: 414px) {
+    margin-top: 15px;
+  }
 `;
 
 export const SearchCep_Container = styled.div`
@@ -119,6 +123,10 @@ export const SearchCep_Container = styled.div`
   align-items: center;
 
   @media (max-width: 320px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 414px) {
     flex-direction: column;
   }
 `;

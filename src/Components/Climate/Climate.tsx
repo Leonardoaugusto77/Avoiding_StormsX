@@ -39,7 +39,7 @@ export default function Climate({ RequestClimate }: ClimateProps): JSX.Element {
 
   const handleSearch = async () => {
     if (!city) {
-      console.warn("Cidade não detectada. Aguardando dados de localização.");
+      console.warn("City not detected. Waiting for location data.");
       return;
     }
 
@@ -47,7 +47,7 @@ export default function Climate({ RequestClimate }: ClimateProps): JSX.Element {
       const data = await RequestClimate(city);
       setWeatherData(data);
     } catch (error) {
-      console.error("Erro ao buscar informações do clima:", error);
+      console.error("Error fetching weather information:", error);
     }
   };
 
@@ -76,13 +76,13 @@ export default function Climate({ RequestClimate }: ClimateProps): JSX.Element {
         if (data.address && (data.address.city || data.address.town)) {
           const userCity = data.address.city || data.address.town;
           setCity(userCity);
-          console.log("Cidade atual do usuário:", userCity);
+          console.log("User's current city:", userCity);
           handleSearch();
         } else {
-          console.warn("Cidade não encontrada na resposta da API.");
+          console.warn("City not found in API response.");
         }
       } catch (error) {
-        console.error("Erro ao obter a localização do usuário:", error);
+        console.error("Error getting user's location:", error);
       }
     };
 
@@ -96,17 +96,17 @@ export default function Climate({ RequestClimate }: ClimateProps): JSX.Element {
   return (
     <ClimateContainer>
       <Card>
-        <Title>Verifique o clima na sua cidade</Title>
+        <Title>Check the weather in your city</Title>
         <SearchContainer>
           <SearchInput
             type="text"
-            placeholder="Aguardando localização..."
+            placeholder="Waiting for location..."
             value={city || ""}
             onChange={(e) => setCity(e.target.value)}
             onKeyPress={handleKeyPress}
           />
           <SearchButton onClick={handleSearch} disabled={!city}>
-            Buscar
+            Search
           </SearchButton>
         </SearchContainer>
         <WeatherInfoContainer isVisible={!!weatherData}>
@@ -115,19 +115,19 @@ export default function Climate({ RequestClimate }: ClimateProps): JSX.Element {
               <h2>
                 {weatherData?.name}, {weatherData?.sys.country}
               </h2>
-              <p>Temperatura: {weatherData?.main.temp}°C</p>
-              <p>Umidade: {weatherData?.main.humidity}%</p>
+              <p>Temperature: {weatherData?.main.temp}°C</p>
+              <p>Humidity: {weatherData?.main.humidity}%</p>
               <WeatherConditions>
-                Condições: {weatherData?.weather[0].description}
+                Conditions: {weatherData?.weather[0].description}
                 <WeatherImage
                   src={`http://openweathermap.org/img/wn/${weatherData?.weather[0].icon}.png`}
                   alt={weatherData?.weather[0].description}
                 />
               </WeatherConditions>
-              <p>Velocidade do Vento: {weatherData?.wind.speed} km/h</p>
+              <p>Wind Speed: {weatherData?.wind.speed} km/h</p>
             </>
           ) : (
-            <p>Aguardando dados do clima...</p>
+            <p>Waiting for weather data...</p>
           )}
         </WeatherInfoContainer>
       </Card>

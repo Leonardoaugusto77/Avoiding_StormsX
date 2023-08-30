@@ -62,6 +62,7 @@ export const Title = styled.h1`
   }
 
   @media (max-width: 320px) {
+    font-size: 17px;
     text-align: center;
   }
 `;
@@ -73,6 +74,9 @@ export const SearchContainer = styled.div`
   margin-top: 20px;
 
   @media (max-width: 320px) {
+    flex-direction: column;
+  }
+  @media (max-width: 414px) {
     flex-direction: column;
   }
 `;
@@ -93,6 +97,10 @@ export const SearchButton = styled.button`
   cursor: pointer;
 
   @media (max-width: 320px) {
+    margin-top: 15px;
+  }
+
+  @media (max-width: 414px) {
     margin-top: 15px;
   }
 `;

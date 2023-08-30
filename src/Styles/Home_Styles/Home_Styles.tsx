@@ -77,7 +77,6 @@ export const Title = styled.h1`
       transform: rotateX(0deg);
     }
   }
-
   @media (max-width: 320px) {
     width: 30vh;
   }
@@ -86,13 +85,9 @@ export const Title = styled.h1`
     width: 40vh;
     font-size: 30px;
   }
-
   @media (max-width: 414px) {
-    width: 40vh;
+    width: 45vh;
     font-size: 25px;
-  }
-  @media (max-width: 768px) {
-    width: 60vh;
   }
 `;
 
@@ -156,6 +151,10 @@ export const Registration_Button = styled.button`
 
   @media (max-width: 320px) {
     width: 220px;
+
+    &:hover {
+      width: 300px;
+    }
   }
 
   @media (max-width: 390px) {
